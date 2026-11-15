@@ -1,6 +1,6 @@
 name: App de escritorio (Windows / macOS / Linux)
 
-# Se ejecuta al publicar una etiqueta v* (p. ej. `git tag v0.1.0 && git push --tags`)
+# Se ejecuta al publicar una etiqueta v* (p. ej. `git tag v0.4.0 && git push origin v0.4.0`)
 on:
   push:
     tags:
@@ -40,19 +40,24 @@ jobs:
           sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
 
       - name: Instalar dependencias del frontend
-        run: |
-          cd desktop
-          bun install
+        working-directory: desktop
+        run: bun install
 
       - name: Compilar y empaquetar
-        uses: tauri-apps/tauri-action@v0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: desktop
+        run: bunx tauri build --target ${{ matrix.settings.targets }}
+
+      - name: Publicar release
+        uses: softprops/action-gh-release@v2
         with:
-          projectPath: desktop
-          tagName: ${{ github.ref_name }}
-          releaseName: 'Tnx Pairing Chess System ${{ github.ref_name }}'
-          releaseBody: 'Instaladores offline para Windows (.msi/.exe), macOS (.dmg) y Linux (AppImage/deb/rpm).'
-          releaseDraft: false
-          prerelease: false
-          args: ${{ matrix.settings.targets }}
+          tag_name: ${{ github.ref_name }}
+          name: 'Tnx · Social Chess Pairing ${{ github.ref_name }}'
+          body: 'Instaladores offline para Windows (.msi/.exe), macOS (.dmg) y Linux (AppImage/deb/rpm).'
+          fail_on_unmatched_files: false
+          files: |
+            desktop/src-tauri/target/**/bundle/**/*.AppImage
+            desktop/src-tauri/target/**/bundle/**/*.deb
+            desktop/src-tauri/target/**/bundle/**/*.rpm
+            desktop/src-tauri/target/**/bundle/**/*.exe
+            desktop/src-tauri/target/**/bundle/**/*.msi
+            desktop/src-tauri/target/**/bundle/**/*.dmg

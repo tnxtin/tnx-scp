@@ -69,6 +69,7 @@ const CHANGELOG: Version[] = [
       { kind: 'mejora', scope: 'web', text: 'Nuevo nombre: Tnx · Social Chess Pairing (antes Tnx Pairing Chess System).' },
       { kind: 'nueva', scope: 'web', text: 'Nueva pestaña Wiki con la documentación completa del sistema.' },
       { kind: 'nueva', scope: 'web', text: 'Pestaña ChangeLog separada por componente (Web / App de escritorio) con filtros.' },
+      { kind: 'nueva', scope: 'web', text: 'Instalador interactivo de la web: elige SQLite o MariaDB/MySQL (pidiendo host, puerto, usuario, contraseña y nombre de la base), da de alta el administrador y deja el sistema listo para arrancar.' },
       { kind: 'mejora', scope: 'web', text: 'El acceso arbitraje del header pasa a ser un icono.' },
       { kind: 'mejora', scope: 'app', text: 'La app de escritorio adopta el nuevo nombre y la licencia GPL en su ventana y paquetes.' },
     ],

@@ -25,7 +25,17 @@ GPL-3.0-or-later — libre de ejecutar, estudiar, modificar y redistribuir (ver 
 
 Todo vive en **SQLite** vía Prisma (`db/custom.db`): usuarios, torneos, jugadores y rondas (el `GeneratedRound` del motor se guarda como blobs JSON). El motor de emparejamiento (`src/lib/pairing/engine.ts`) es puro y no ha cambiado.
 
-## Puesta en marcha
+## Instalación de la web (asistente)
+
+```bash
+bun install
+bun run install:web
+```
+
+El asistente pregunta: base de datos (**SQLite** local o **MariaDB/MySQL** en servidor, con host, puerto, usuario, contraseña y nombre — crea la base si puede), datos del **administrador** (`admin`) y puerto. Escribe `.env`, aplica el esquema, siembra el admin y deja la lista para `bun run build && bun run start`.
+
+Instalación manual:
+
 
 ```bash
 bun install

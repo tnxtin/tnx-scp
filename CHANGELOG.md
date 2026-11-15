@@ -12,6 +12,7 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 - **Mejora** Nuevo nombre: Tnx · Social Chess Pairing (antes Tnx Pairing Chess System).
 - **Nueva** Pestaña Wiki con la documentación completa del sistema.
 - **Nueva** Pestaña ChangeLog separada por componente (Web / App de escritorio) con filtros.
+- **Nueva** Instalador interactivo de la web: elige SQLite o MariaDB/MySQL (pidiendo host, puerto, usuario, contraseña y nombre de la base), da de alta el administrador y deja el sistema listo para arrancar (`bun run install:web`).
 - **Mejora** El acceso arbitraje del header pasa a ser un icono.
 
 ### App

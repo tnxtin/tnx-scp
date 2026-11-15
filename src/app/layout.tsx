@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Generador de emparejamientos de ajedrez con Elo virtual por media exponencial y grupos progresivos. Software libre (GPL-3.0-or-later) para clubes, escuelas y centros sociales.",
   keywords: ["ajedrez", "emparejamiento", "suizo", "Elo virtual", "torneo"],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo.svg",
   },
 };
 

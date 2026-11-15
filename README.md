@@ -2,6 +2,10 @@
 
 **Software libre** (GPL-3.0-or-later) para clubes, escuelas y centros sociales.
 
+```bash
+git clone https://github.com/tnxtin/tnx-scp.git
+```
+
 Emparejador de ajedrez **alternativo al sistema suizo**, con **grupos progresivos**, ratings virtuales para jugadores sin Elo y distribución aleatoria dentro de cada franja.
 
 ## Licencia

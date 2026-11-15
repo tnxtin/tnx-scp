@@ -219,7 +219,7 @@ export function ArbitroPanel() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {[2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+                  {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                     <SelectItem key={n} value={String(n)}>
                       {n} rondas
                     </SelectItem>

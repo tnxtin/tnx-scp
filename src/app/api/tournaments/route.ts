@@ -73,9 +73,9 @@ export async function POST(req: NextRequest) {
   if (!name) {
     return NextResponse.json({ error: 'El nombre es obligatorio' }, { status: 400 })
   }
-  if (!Number.isInteger(totalRounds) || totalRounds < 2 || totalRounds > 9) {
+  if (!Number.isInteger(totalRounds) || totalRounds < 2 || totalRounds > 10) {
     return NextResponse.json(
-      { error: 'Las rondas deben ser un número entre 2 y 9' },
+      { error: 'Las rondas deben ser un número entre 2 y 10' },
       { status: 400 },
     )
   }

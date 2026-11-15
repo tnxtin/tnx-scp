@@ -67,6 +67,8 @@ const CHANGELOG: Version[] = [
     entries: [
       { kind: 'nueva', scope: 'web', text: 'La página frontal muestra la lista de torneos en tres apartados: en juego, por comenzar y realizados.' },
       { kind: 'nueva', scope: 'web', text: 'Cada torneo tiene su propia página pública (/torneo/…) con emparejamientos, ranking y clasificación.' },
+      { kind: 'nueva', scope: 'web', text: 'Simulador de torneos reales de info64.org: carga los inscritos y juega todas las rondas con resultados según el Elo (scripts/simular-torneo.ts).' },
+      { kind: 'mejora', scope: 'web', text: 'Hasta 10 rondas por torneo (antes 9).' },
     ],
   },
   {

@@ -1,5 +1,5 @@
 /**
- * Pruebas del motor de emparejamiento con bandas progresivas.
+ * Pruebas del motor de emparejamiento con grupos progresivos.
  * Ejecutar: bun scripts/test-engine.ts
  */
 import {

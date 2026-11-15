@@ -136,7 +136,7 @@ const CHANGELOG: Version[] = [
     date: '2026-05-12',
     title: 'Versión inicial',
     entries: [
-      { kind: 'nueva', scope: 'web', text: 'Motor de emparejamiento suizo por bandas progresivas con Elo virtual por media exponencial (652 comprobaciones).' },
+      { kind: 'nueva', scope: 'web', text: 'Motor de emparejamiento suizo por grupos progresivos con Elo virtual por media exponencial (652 comprobaciones).' },
       { kind: 'nueva', scope: 'web', text: 'Interfaz Next.js + shadcn/ui con configuración, jugadores, rondas y clasificación.' },
       { kind: 'nueva', scope: 'web', text: 'Suite de pruebas del motor (scripts/test-engine.ts).' },
     ],

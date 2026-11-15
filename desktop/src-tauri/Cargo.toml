@@ -1,7 +1,7 @@
 [package]
 name = "tnxpcs-desktop"
 version = "0.1.0"
-description = "Tnx · Social Chess Pairing — emparejamiento de ajedrez offline por bandas progresivas"
+description = "Tnx · Social Chess Pairing — emparejamiento de ajedrez offline por grupos progresivos"
 license = "GPL-3.0-or-later"
 authors = ["Tinux"]
 edition = "2021"

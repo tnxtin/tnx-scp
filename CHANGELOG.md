@@ -71,7 +71,7 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ### Web
 
-- **Nueva** Motor de emparejamiento suizo por bandas progresivas con Elo virtual por media exponencial (652 comprobaciones).
+- **Nueva** Motor de emparejamiento suizo por grupos progresivos con Elo virtual por media exponencial (652 comprobaciones).
 - **Nueva** Interfaz Next.js + shadcn/ui con configuración, jugadores, rondas y clasificación.
 - **Nueva** Suite de pruebas del motor (`scripts/test-engine.ts`).
 

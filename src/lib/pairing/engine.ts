@@ -1,5 +1,5 @@
 /**
- * Motor de emparejamiento de ajedrez con "bandas progresivas".
+ * Motor de emparejamiento de ajedrez con "grupos progresivos".
  *
  * Sistema (idea del usuario):
  *  1. Los jugadores SIN Elo reciben un Elo virtual calculado con la media

@@ -55,7 +55,7 @@ const FAQS: Array<{ q: string; a: Array<string> }> = [
   {
     q: '¿Es un sistema suizo FIDE estándar?',
     a: [
-      'Es una variante: bandas progresivas estilo FIDE con rating virtual y grupos que se fusionan ronda a ronda. En la ronda 1 no hay cruces globales (un jugador de 1400 no puede cruzar con uno de 2200), lo que evita palizas en torneos con mucha diferencia de nivel.',
+      'Es una variante: grupos progresivos estilo FIDE con rating virtual y grupos que se fusionan ronda a ronda. En la ronda 1 no hay cruces globales (un jugador de 1400 no puede cruzar con uno de 2200), lo que evita palizas en torneos con mucha diferencia de nivel.',
     ],
   },
   {

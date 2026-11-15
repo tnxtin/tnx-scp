@@ -62,3 +62,4 @@ desktop/src-tauri/gen/schemas/
 db/*.db
 *.db-shm
 *.db-wal
+prisma/db/

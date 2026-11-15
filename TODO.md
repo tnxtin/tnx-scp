@@ -65,6 +65,38 @@ Hoy el jugador tiene un único `elo`. Se piden **cuatro ratings reales**:
 - [ ] **App de escritorio** (aparcada): replicar campos y cadena de
       prioridad cuando se retome.
 
+### Enlazar las altas con las bases de datos de FADA y FIDE
+
+Al dar de alta un jugador nuevo, poder **traer sus datos reales** (nombre,
+FIDE ID, `eloFide`, `eloFada`) en vez de teclearlos a mano.
+
+- [ ] Investigar fuentes disponibles:
+      - **FIDE**: listas mensuales descargables
+        (ratings.fide.com → download_lists) con nombre, FIDE ID, fed. y
+        elo estándar/rapid/blitz.
+      - **FEDA/FADA**: página de consulta de licencias/ratings — ¿existe
+        API o solo HTML? Valorar también info64.org, que ya agrega FIDE +
+        FEDA por jugador.
+- [ ] **Decisión de arquitectura** (abierta por el usuario):
+      - **Opción A — Espejo mensual en el servidor huésped** (recomendada):
+        descargar la lista oficial cuando se publica, guardarla en una
+        tabla local (`player_rating_mirror`) y consultarla desde el alta.
+        Rápida, funciona aunque caiga la web del tercero, una sola fuente
+        de verdad por mes.
+      - **Opción B — Consulta directa**: buscar en el portal de FEDA/FIDE
+        en el momento del alta. Siempre al día, pero depende de su web
+        (puede cambiar de HTML o caerse) y añade latencia al alta.
+      - **Híbrida**: espejo mensual + búsqueda directa como refresco
+        puntual cuando el jugador no aparece en el espejo.
+- [ ] UX del alta: campo «Buscar en FIDE/FADA…» (por nombre o FIDE ID) con
+      sugerencias; al elegir, rellena nombre, FIDE ID, `eloFide` y
+      `eloFada` de la ficha.
+- [ ] Tareas técnicas si se elige el espejo: tabla `player_rating_mirror`,
+      job de descarga mensual, endpoint `/api/ratings/search?q=`,
+      autocompletado en PlayersView.
+- [ ] Revisar las condiciones de uso de los datos de FIDE/FEDA antes de
+      redistribuirlos en el espejo.
+
 ## 3 · Ideas relacionadas (sin fecha)
 
 - [ ] Informe FIDE (TRF16) además del de FADA — comparte el 90 % del

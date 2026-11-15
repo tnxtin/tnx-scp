@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
-import { getActivePublicTournament } from '@/lib/tournament'
+import { listPublicTournaments } from '@/lib/tournament'
 
 export async function GET() {
-  const data = await getActivePublicTournament()
-  return NextResponse.json({ tournament: data })
+  const tournaments = await listPublicTournaments()
+  return NextResponse.json({ tournaments })
 }

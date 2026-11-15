@@ -61,6 +61,15 @@ const FILTERS: Array<{ value: Filter; label: string }> = [
 
 const CHANGELOG: Version[] = [
   {
+    version: '0.4.1',
+    date: '2026-11-15',
+    title: 'La web pública lista todos los torneos',
+    entries: [
+      { kind: 'nueva', scope: 'web', text: 'La página frontal muestra la lista de torneos en tres apartados: en juego, por comenzar y realizados.' },
+      { kind: 'nueva', scope: 'web', text: 'Cada torneo tiene su propia página pública (/torneo/…) con emparejamientos, ranking y clasificación.' },
+    ],
+  },
+  {
     version: '0.4.0',
     date: '2026-11-15',
     title: 'Software libre (GPL-3.0-or-later) y nuevo nombre',

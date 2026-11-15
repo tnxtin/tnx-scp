@@ -65,7 +65,8 @@ bunx tsc --noEmit            # tipos
 ```
 src/
 ├── app/
-│   ├── page.tsx               # web pública (torneo ACTIVO, solo lectura)
+│   ├── page.tsx               # frontal pública: lista de torneos en 3 apartados (en juego / por comenzar / realizados)
+│   ├── torneo/[id]/page.tsx   # página pública de un torneo (solo lectura)
 │   ├── login/                 # acceso árbitros/auxiliares/admin
 │   ├── admin/                 # panel del administrador
 │   ├── arbitro/               # panel del árbitro (lista + /arbitro/[id] editor)

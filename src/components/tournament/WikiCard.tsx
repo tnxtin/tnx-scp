@@ -81,7 +81,7 @@ const SECTIONS: WikiSection[] = [
     id: 'web-publica',
     title: 'La web pública (para jugadores)',
     content: [
-      'Muestra siempre el torneo **ACTIVO**: emparejamientos seccionados por grupos con su franja de Elo, ranking inicial y clasificación en vivo.',
+      'La página frontal lista **todos los torneos** en tres apartados: **en juego**, **por comenzar** y **realizados**. Al abrir un torneo verás sus emparejamientos seccionados por grupos con su franja de Elo, el ranking inicial y la clasificación en vivo.',
       'Cada jugador tiene una **ficha** (icono ℹ en las tablas) con su posición, puntos, partidas, Elo efectivo, un gráfico de evolución de puntos y el detalle ronda a ronda: grupo, rival, color y resultado.',
       'No requiere ninguna cuenta: es solo lectura.',
     ],

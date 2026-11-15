@@ -108,11 +108,44 @@ export interface PublicTournamentData {
   rounds: GeneratedRound[]
 }
 
-/** Torneo ACTIVO (publicado) para la web pública. */
-export async function getActivePublicTournament(): Promise<PublicTournamentData | null> {
-  const t = (await db.tournament.findFirst({
-    where: { status: 'ACTIVO' },
-    orderBy: { updatedAt: 'desc' },
+export interface PublicTournamentSummary {
+  id: string
+  name: string
+  totalRounds: number
+  byePoints: number
+  status: string
+  arbitro: string
+  playerCount: number
+  roundsPlayed: number
+}
+
+/** Lista pública de TODOS los torneos (la frontal los agrupa por estado). */
+export async function listPublicTournaments(): Promise<PublicTournamentSummary[]> {
+  const ts = await db.tournament.findMany({
+    orderBy: [{ status: 'asc' }, { updatedAt: 'desc' }],
+    include: {
+      createdBy: { select: { name: true } },
+      _count: { select: { players: true, rounds: true } },
+    },
+  })
+  return ts.map((t) => ({
+    id: t.id,
+    name: t.name,
+    totalRounds: t.totalRounds,
+    byePoints: t.byePoints,
+    status: t.status,
+    arbitro: t.createdBy.name,
+    playerCount: t._count.players,
+    roundsPlayed: t._count.rounds,
+  }))
+}
+
+/** Torneo concreto para la página pública (cualquier estado). */
+export async function loadPublicTournamentById(
+  id: string,
+): Promise<PublicTournamentData | null> {
+  const t = (await db.tournament.findUnique({
+    where: { id },
     include: {
       createdBy: { select: { name: true } },
       players: { orderBy: { order: 'asc' } },

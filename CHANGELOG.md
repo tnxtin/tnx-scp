@@ -4,6 +4,14 @@ Todos los cambios notables de **Tnx · Social Chess Pairing** — tanto de la **
 
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado es [SemVer](https://semver.org/lang/es/).
 
+## [0.4.1] — 2026-11-15 · Web
+
+### Web
+
+- **Nueva** La página frontal muestra la lista de torneos en tres apartados: en juego, por comenzar y realizados.
+- **Nueva** Cada torneo tiene su propia página pública (`/torneo/…`) con emparejamientos, ranking y clasificación.
+- **Mejora** La Wiki actualiza la descripción de la web pública.
+
 ## [0.4.0] — 2026-11-15 · Web y App
 
 ### Web

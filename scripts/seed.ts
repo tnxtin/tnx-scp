@@ -40,7 +40,7 @@ async function main() {
       username: 'admin',
       name: 'Administrador',
       role: 'ADMIN',
-      passwordHash: hashPassword('Tnx@Chess66'),
+      passwordHash: hashPassword('mi_contraseña'),
     },
   })
   console.log(`Admin listo: ${admin.username} (${admin.id})`)

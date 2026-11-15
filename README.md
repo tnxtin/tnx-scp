@@ -38,7 +38,7 @@ bun run dev                  # http://localhost:3000
 
 | Usuario | Contraseña | Rol |
 |---|---|---|
-| `admin` | `Tnx@Chess66` | Administrador (con el torneo XX Open Sub 2400 Málaga asignado) |
+| `admin` | `mi_contraseña` | Administrador (con el torneo XX Open Sub 2400 Málaga asignado) |
 
 El admin crea árbitros y auxiliares desde su panel.
 

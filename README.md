@@ -12,6 +12,10 @@ Sistema de emparejamiento de ajedrez **alternativo al sistema suizo**, con **gru
 
 GPL-3.0-or-later — libre de ejecutar, estudiar, modificar y redistribuir (ver `LICENSE`).
 
+## TODO de desarrollo
+
+Ver [TODO.md](TODO.md) — informe FADA, ratings múltiples (FADA/FIDE/Club/USCF).
+
 ## Arquitectura
 
 - **Web pública** (`/`): para los jugadores, sin cuenta. Muestra el torneo **ACTIVO** en solo lectura: emparejamientos por grupos, ranking inicial, clasificación y FAQ. Cada jugador tiene ficha con su evolución (icono ℹ).

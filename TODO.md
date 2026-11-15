@@ -97,7 +97,41 @@ FIDE ID, `eloFide`, `eloFada`) en vez de teclearlos a mano.
 - [ ] Revisar las condiciones de uso de los datos de FIDE/FEDA antes de
       redistribuirlos en el espejo.
 
-## 3 · Ideas relacionadas (sin fecha)
+## 3 · App para móviles
+
+Objetivo: **árbitros y auxiliares introducen los resultados desde el móvil**
+mientras recorren las mesas, y nadie depende de un ordenador durante la ronda.
+
+- [ ] Decidir tecnología (investigar y elegir):
+      - **PWA** (recomendada como primer paso): la propia web ya es
+        responsiva; con manifest + service worker queda instalable en el
+        móvil (Android/iOS) y funciona offline. Reutiliza el 100 % del
+        código y la autenticación por roles.
+      - **Tauri 2 mobile** (iOS/Android): mismo framework que la app de
+        escritorio, reutiliza motor y vistas.
+      - Nativa (React Native / Flutter): solo si se necesitan capacidades
+        que las anteriores no cubran.
+- [ ] **Sección especial de resultados por móvil** (árbitros y auxiliares):
+      - Vista mobile-first «por mesa»: número de mesa grande, nombres de
+        ambos jugadores y **botones grandes** (1 – 0, ½ – ½, 0 – 1) que
+        guardan al pulsar.
+      - Navegación rápida: buscar por número de mesa o por apellido;
+        siguiente mesa con un gesto.
+      - Respeta los roles existentes: el **auxiliar solo puede marcar
+        resultados**, el árbitro además puede generar la siguiente ronda
+        desde el móvil.
+      - Diseñada para una mano: nada de teclear en el flujo principal.
+- [ ] **Offline**: los resultados se guardan localmente en el móvil y se
+      sincronizan al recuperar conexión (usa el mismo diseño de
+      sincronización del clon — ver references/sincronizacion.md de la
+      skill clon-web-offline).
+- [ ] Jugadores y público en general: la web ya muestra emparejamientos y
+      clasificación en el móvil (responsiva); añadir «añadir a pantalla de
+      inicio» como PWA también para consulta.
+- [ ] Si se hace app instalable nativa: CI de compilación y firma para
+      Play Store / App Store (o distribución APK directa para clubes).
+
+## 4 · Ideas relacionadas (sin fecha)
 
 - [ ] Informe FIDE (TRF16) además del de FADA — comparte el 90 % del
       trabajo de §1.

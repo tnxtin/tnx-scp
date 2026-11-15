@@ -6,7 +6,7 @@
 git clone https://github.com/tnxtin/tnx-scp.git
 ```
 
-Emparejador de ajedrez **alternativo al sistema suizo**, con **grupos progresivos**, ratings virtuales para jugadores sin Elo y distribución aleatoria dentro de cada franja.
+Sistema de emparejamiento de ajedrez **alternativo al sistema suizo**, con **grupos progresivos**, ratings virtuales para jugadores sin Elo y distribución aleatoria dentro de cada franja.
 
 ## Licencia
 

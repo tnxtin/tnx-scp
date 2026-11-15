@@ -104,7 +104,7 @@ export function HowItWorksCard() {
             <AccordionTrigger>5 · Colores</AccordionTrigger>
             <AccordionContent className="space-y-2 text-sm leading-6 text-muted-foreground">
               <p>
-                El emparejador equilibra blancas y negras de cada jugador,
+                El sistema de emparejamiento equilibra blancas y negras de cada jugador,
                 prioriza a quien lleva dos partidas seguidas con el mismo color
                 o una diferencia ≥ 2, y evita el mismo color a quien más lo
                 necesita dentro de cada pareja.

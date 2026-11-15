@@ -82,7 +82,7 @@ export function FaqCard() {
         </CardTitle>
         <CardDescription>
           Dudas habituales sobre la lista de jugadores, los byes, el Elo
-          virtual y el funcionamiento del emparejador.
+          virtual y el funcionamiento del sistema de emparejamiento.
         </CardDescription>
       </CardHeader>
       <CardContent>

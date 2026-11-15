@@ -1,4 +1,4 @@
--- 0001 · tablas base del emparejador offline
+-- 0001 · tablas base del sistema de emparejamiento offline
 -- SQL estándar compatible con SQLite (hoy) y MariaDB (fase servidor):
 -- sin tipos exóticos, TEXT para blobs JSON, sin cláusulas exclusivas de un motor.
 

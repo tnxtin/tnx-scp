@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Roles: ADMIN | ARBITRO | AUXILIAR
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  name         String
+  passwordHash String
+  role         String
+  /// para AUXILIAR: árbitro del que depende
+  supervisorId String?
+  supervisor   User?    @relation("Auxiliares", fields: [supervisorId], references: [id])
+  auxiliares   User[]   @relation("Auxiliares")
+  tournaments  Tournament[]
+  active       Boolean  @default(true)
+  /// datos de registro (fundamentales para árbitros)
+  apellidos    String   @default("")
+  pais         String   @default("")
+  /// Comunidad Autónoma o región
+  comunidad    String   @default("")
+  provincia    String   @default("")
+  municipio    String   @default("")
+  cp           String   @default("")
+  movil        String   @default("")
+  email        String?  @unique
+  tituloArbitro String  @default("")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Estados: BORRADOR | ACTIVO | FINALIZADO
+model Tournament {
+  id          String   @id @default(cuid())
+  name        String
+  totalRounds Int
+  byePoints   Float    @default(1)
+  status      String   @default("BORRADOR")
+  createdById String
+  createdBy   User     @relation(fields: [createdById], references: [id])
+  players     TournamentPlayer[]
+  rounds      TournamentRound[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TournamentPlayer {
+  id           String     @id @default(cuid())
+  tournamentId String
+  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  name         String
+  club         String     @default("")
+  elo          Int?
+  order        Int
+}
+
+/// Cada ronda guarda el GeneratedRound del motor como blobs JSON
+model TournamentRound {
+  id           String     @id @default(cuid())
+  tournamentId String
+  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  number       Int
+  /// semilla uint32 del motor (no cabe en Int32)
+  seed         Float
+  groupsJson   String
+  gamesJson    String
+  byesJson     String
+  ratingsJson  String
+
+  @@unique([tournamentId, number])
+}

@@ -408,12 +408,12 @@ export function RoundsView({
                         </Badge>
                       </div>
                     </div>
-                    <Table>
+                    <Table className="table-fixed">
                       <TableHeader>
                         <TableRow>
-                          <TableHead className="w-10">Mesa</TableHead>
-                          <TableHead>Blancas</TableHead>
-                          <TableHead>Negras</TableHead>
+                          <TableHead className="w-12">Mesa</TableHead>
+                          <TableHead className="w-[44%]">Blancas</TableHead>
+                          <TableHead className="w-[36%]">Negras</TableHead>
                           <TableHead className="w-28 text-right">
                             Resultado
                           </TableHead>

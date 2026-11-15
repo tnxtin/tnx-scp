@@ -209,7 +209,8 @@ if (demo) {
     for (let i = 0; i < state.players.length; i++) {
       const p = state.players[i]
       await prisma.tournamentPlayer.create({
-        data: { tournamentId: t.id, name: p.name, club: p.club ?? '', elo: p.elo ?? null, order: i },
+        // conservar el id del estado: las rondas importadas lo referencian
+        data: { id: p.id, tournamentId: t.id, name: p.name, club: p.club ?? '', elo: p.elo ?? null, order: i },
       })
     }
     for (const r of state.rounds ?? []) {

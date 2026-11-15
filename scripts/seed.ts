@@ -70,6 +70,8 @@ async function main() {
   })
   await prisma.tournamentPlayer.createMany({
     data: st.players.map((p, i) => ({
+      // conservar el id del estado: las rondas importadas lo referencian
+      id: p.id,
       tournamentId: t.id,
       name: p.name,
       club: p.club ?? '',

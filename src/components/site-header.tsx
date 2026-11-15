@@ -56,7 +56,7 @@ export function SiteHeader() {
               Tnx · Social Chess Pairing
             </h1>
             <p className="text-xs text-muted-foreground sm:text-sm">
-              Emparejamiento por bandas progresivas · Elo virtual · GPL-3.0-or-later
+              Sistema de Emparejamiento por Grupos Progresivos · Elo virtual · GPL-3.0-or-later
             </p>
           </div>
         </Link>

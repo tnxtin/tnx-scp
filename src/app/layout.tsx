@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tnx · Social Chess Pairing · Bandas progresivas",
+  title: "Tnx · Social Chess Pairing · Sistema de Emparejamiento por Grupos Progresivos",
   description:
     "Generador de emparejamientos de ajedrez con Elo virtual por media exponencial y grupos progresivos. Software libre (GPL-3.0-or-later) para clubes, escuelas y centros sociales.",
   keywords: ["ajedrez", "emparejamiento", "suizo", "Elo virtual", "torneo"],
@@ -44,7 +44,7 @@ export default function RootLayout({
           <main className="mx-auto w-full max-w-6xl flex-1 p-4">{children}</main>
           <footer className="mt-auto border-t bg-background">
             <div className="mx-auto w-full max-w-6xl px-4 py-3 text-center text-xs text-muted-foreground">
-              Sistema de bandas progresivas · Los datos del torneo los gestiona
+              Sistema de Emparejamiento por Grupos Progresivos · Los datos del torneo los gestiona
               el árbitro desde su panel
             </div>
           </footer>

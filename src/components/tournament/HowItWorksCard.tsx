@@ -24,7 +24,7 @@ export function HowItWorksCard() {
           Cómo funciona el sistema
         </CardTitle>
         <CardDescription>
-          Emparejamiento por bandas progresivas: Elo virtual + grupos que se
+          Sistema de Emparejamiento por Grupos Progresivos: Elo virtual + grupos que se
           fusionan ronda a ronda.
         </CardDescription>
       </CardHeader>

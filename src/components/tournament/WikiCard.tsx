@@ -26,7 +26,7 @@ const SECTIONS: WikiSection[] = [
     id: 'intro',
     title: '¿Qué es Tnx · Social Chess Pairing?',
     content: [
-      'Un emparejador de ajedrez para torneos suizos con un sistema propio de «bandas progresivas»: los jugadores se agrupan por nivel y los grupos se van fusionando ronda a ronda hasta la final.',
+      'Un emparejador de ajedrez con el Sistema de Emparejamiento por Grupos Progresivos: los jugadores se agrupan por nivel y los grupos se van fusionando ronda a ronda hasta la final.',
       'El proyecto es **software libre** bajo licencia **GPL-3.0-or-later**: cualquiera puede ejecutarlo, estudiarlo, modificarlo y redistribuirlo — pensado para clubes, escuelas y centros sociales. Las obras derivadas deben conservar la misma licencia.',
     'Tiene dos partes: la **web pública** (donde los jugadores consultan emparejamientos, ranking y clasificación, sin cuenta) y el **acceso arbitraje** (administrador, árbitros y auxiliares gestionan el torneo con usuario y contraseña).',
       'Además existe una **app de escritorio offline** para Windows, macOS y Linux, que genera emparejamientos en un portátil sin conexión y guarda los datos en SQLite.',
@@ -34,7 +34,7 @@ const SECTIONS: WikiSection[] = [
   },
   {
     id: 'bandas',
-    title: 'Emparejamiento por bandas progresivas',
+    title: 'Sistema de Emparejamiento por Grupos Progresivos',
     content: [
       '**Ronda 1:** la tabla ordenada por Elo se corta en G grupos, donde G es el número de rondas del torneo. Cada grupo es una banda de Elo y solo se enfrentan jugadores del mismo grupo.',
       '**Ronda r:** los grupos se reconstruyen con los puntos acumulados (Elo como desempate) y cada vez hay menos: G = rondas − ronda + 1. Dos grupos «menos grandes» se fusionan cada ronda hasta llegar a un único grupo en la final.',

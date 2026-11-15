@@ -63,3 +63,6 @@ db/*.db
 *.db-shm
 *.db-wal
 prisma/db/
+
+# planes y skills internos de sesión
+.zcode/

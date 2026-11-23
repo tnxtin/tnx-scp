@@ -3,6 +3,13 @@
 > Marca las casillas al completar. Cada bloque es independiente; el orden
 > sugerido es el de aparición.
 
+## 0 · Introduccion mas detallada
+
+- [ ] Fichas mas completas para Clubes, Escuelas y Asociaciones.  
+- [ ] Politicas de alta y comportamiento.  
+- [ ] Jerarquias de los grupos y autorizaciones.  
+
+
 ## 1 · Informe para FADA (Lista ELO)
 
 Los ELO virtuales (`~`) son un **remedio interno para poder emparejar**:
@@ -29,14 +36,13 @@ no deben aparecer jamás en el informe que se envía a FADA para la lista ELO.
 
 ## 2 · Ratings múltiples por jugador
 
-Hoy el jugador tiene un único `elo`. Se piden **cuatro ratings reales**:
+Hoy el jugador tiene un único `elo`. Se piden **tres ratings reales**:
 
 | Campo | Descripción | Origen típico |
 |---|---|---|
 | `eloFada` | ELO de la Federación Andaluza | lista FADA mensual |
 | `eloFide` | ELO internacional FIDE | lista FIDE mensual |
 | `eloClub` | ELO interno del club | el propio club |
-| `eloUscf` | Rating norteamericano (USCF) | lista USCF |
 
 - [ ] **Modelo (Prisma)**: añadir los 4 campos `Int?` a `TournamentPlayer`
       (y a `User`… no: los ratings son del jugador de torneo, no del

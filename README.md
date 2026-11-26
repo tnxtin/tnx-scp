@@ -1,5 +1,5 @@
-# Tnx · Social Chess Pairing
-
+# Social Chess Pairing ( Tnx )
+#### Titulo Apreviado **SCP**: 
 ## Historia
 
 Hace casi 30 años, hice un programa en DBase IV  para crear un ELO interno del Club Ajedrez Benalmadena, Era muy adictivo, y habia muchos piques para ver quienes eran los mejores del club. En aquella epoca se imprimia en papel cada semana el viernes.Y cada jugador tenia una tarjeta donde apuntaba el numero del rival y los resultados. Habia solo dos ritmos, Blitz y Rapidas. 
@@ -18,7 +18,12 @@ Tengo que investigar cogiendo multiples suizod de torneos reales y comparar las 
 
 La intencion ahora es de crear  la logica y ponerla al principio como Web y CLI ( Terminal o Prompts ). 
 Los siguientes pasos es hacer un programa GUI, para  Windows, Linux, Mac.  
-Y finalmente para moviles con apk...pero solo para introduccio n  de resultados para arbitros y visualizacion para los jugadores.
+Y finalmente para moviles con apk...pero solo para introduccio n  de resultados para arbitros y visualizacion para los jugadores.  
+Porque **Social**: Es un software para entidades que no quieren o no ueden tener un gasto economico en la eloaboracion de un Torneo. Hare una cuenta para donaciones y que pueda pagar los gastos de ponerlo en un hosting.  
+
+Mas adelante, hare u suizo clasico, con todos los conceptos que ello conlleva.
+
+
 
 
 

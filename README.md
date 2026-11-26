@@ -1,5 +1,24 @@
 # Tnx · Social Chess Pairing
 
+## Historia
+
+Hace casi 30 años, hice un programa en DBase IV  para crear un ELO interneo del Club Ajedrez Benalmadena, Era muy adictivo, y habia muchos piques para ver quienes eran los mejores del club. En aquella epoca se imprimia en papel cada semana el viernes.Y cada jugador tenia una tarjetta donde apuntaba el numero del rival y los resultados. Habia solo dos ritmos, Blitz y Rapidas. 
+
+Luego se me ocurrio desarrolarlo con optra idea, pero la vida da muchas vuentas y lo aparque.  
+
+Pero...he vuelto y ademas con una experiencia enorme como arbitro. Y de las triquiñuelas de los jugadores.  
+
+Desde que aprendi la forma de elaborar un emparejamiento por el metodo Suizo, pensaba que era un sistema no muy justo, y sobre todo cuando el numero de rondas es pequeño en los torneos con muchos jugadores.  
+Por otro lado, veia que jugadores sin Rating ( ELO ), podian jugar muy bien y destrozar la logica de un torneo en los puestos.  
+
+Por ello, este sistema que propongo, acaba con esos dos problemas. Tiene el inconveniente que se hacen calculos que un arbitro con paple no podria elaborarlo. Implica tabal logaritmica y exponenciales.  
+
+Todavia me queda la duda si aplicar logaritmos Neperianos o sistemas Exponenciales. En estos primeros desarrollo lo hare con exponenciales, y mas adelante, dare a elegir si se desea hacer el torneo con exponenciales o Neperianos.  
+
+La intencion ahora es de crear  la logica y ponerla al principio como Web y CLI ( Terminal o Prompts ).  
+
+
+
 **Software libre** (GPL-3.0-or-later) para clubes, escuelas y centros sociales.
 
 ```bash

@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Crown, LogIn, LogOut, LayoutDashboard } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { Crown, LayoutDashboard, LogIn, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Container } from '@/components/site/section'
+import { cn } from '@/lib/utils'
 
 interface Me {
   id: string
@@ -27,9 +30,20 @@ const PANEL_PATH: Record<string, string> = {
   AUXILIAR: '/auxiliar',
 }
 
+/** Navegación de la web pública. `coincide` es el inicio de ruta que deja el enlace marcado. */
+const NAV: Array<{ href: string; label: string; coincide?: string }> = [
+  { href: '/torneos', label: 'Torneos', coincide: '/torneo' },
+  { href: '/jugadores', label: 'Jugadores', coincide: '/jugadores' },
+  { href: '/#como-funciona', label: 'Cómo funciona' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/wiki', label: 'Wiki', coincide: '/wiki' },
+  { href: '/changelog', label: 'ChangeLog', coincide: '/changelog' },
+]
+
 export function SiteHeader() {
   const [me, setMe] = useState<Me | null>(null)
   const [loaded, setLoaded] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     fetch('/api/auth/me')
@@ -44,9 +58,11 @@ export function SiteHeader() {
     window.location.href = '/'
   }
 
+  const activo = (coincide?: string) => !!coincide && pathname.startsWith(coincide)
+
   return (
     <header className="border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 p-4">
+      <Container className="flex flex-wrap items-center justify-between gap-3 py-3">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Crown className="size-5" aria-hidden />
@@ -95,6 +111,30 @@ export function SiteHeader() {
             </Button>
           )}
         </div>
+      </Container>
+
+      {/* segunda fila: en móvil se desplaza en horizontal (sin barra visible) en lugar de doblarse */}
+      <div className="border-t">
+        <Container>
+          <nav
+            aria-label="Web pública"
+            className="-mb-px flex gap-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {NAV.map(({ href, label, coincide }) => (
+              <Link
+                key={href}
+                href={href}
+                aria-current={activo(coincide) ? 'page' : undefined}
+                className={cn(
+                  'inline-flex shrink-0 items-center border-b-2 border-transparent px-3 py-2.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:border-stone-300 hover:text-foreground',
+                  activo(coincide) && 'border-amber-500 text-foreground hover:border-amber-500',
+                )}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </Container>
       </div>
     </header>
   )

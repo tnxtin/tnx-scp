@@ -47,7 +47,7 @@ Ver [TODO.md](TODO.md) — informe FADA, ratings múltiples (FADA/FIDE/Club/USCF
 
 ## Arquitectura
 
-- **Web pública** (`/`): para los jugadores, sin cuenta. Muestra el torneo **ACTIVO** en solo lectura: emparejamientos por grupos, ranking inicial, clasificación y FAQ. Cada jugador tiene ficha con su evolución (icono ℹ).
+- **Web pública** (`/`): para los jugadores, sin cuenta. La **portada** muestra los últimos torneos y el listado de jugadores, y explica cómo funciona el sistema. Cada torneo (`/torneo/…`) se consulta en solo lectura: emparejamientos por grupos, ranking inicial y clasificación. Cada jugador tiene **ficha** con su evolución: se abre desde el listado (`/jugadores`, subenlace «Ver ficha») o con el icono ℹ de las tablas del torneo.
 - **Acceso arbitraje** (`/login`): usuario + contraseña. Tres roles:
   - **ADMIN** (`/admin`): crea árbitros y auxiliares, resetea contraseñas, activa/desactiva cuentas y ve todos los torneos.
   - **ARBITRO** (`/arbitro`): crea torneos (con opción de cargar los 104 inscritos de ejemplo), edita jugadores, genera rondas, introduce resultados y publica/oculta el torneo.
@@ -98,14 +98,21 @@ bunx tsc --noEmit            # tipos
 ```
 src/
 ├── app/
-│   ├── page.tsx               # frontal pública: lista de torneos en 3 apartados (en juego / por comenzar / realizados)
+│   ├── page.tsx               # portada: últimos torneos, jugadores, cómo funciona y FAQ
+│   ├── torneos/page.tsx       # lista completa de torneos en 3 apartados (en juego / por comenzar / realizados)
 │   ├── torneo/[id]/page.tsx   # página pública de un torneo (solo lectura)
+│   ├── jugadores/             # listado de jugadores y ficha (/jugadores/[torneo]/[jugador])
+│   ├── wiki/  changelog/      # documentación del sistema e historial de versiones
 │   ├── login/                 # acceso árbitros/auxiliares/admin
 │   ├── admin/                 # panel del administrador
 │   ├── arbitro/               # panel del árbitro (lista + /arbitro/[id] editor)
 │   ├── auxiliar/              # panel del auxiliar (solo resultados)
 │   └── api/                   # auth, public, tournaments, admin
 ├── components/
+│   ├── chess/                 # piezas de ajedrez en SVG (motivos de la web pública)
+│   ├── site/                  # estilo común: secciones, cabeceras de página y tarjeta
+│   ├── landing/               # portada (cabecera con damero, tarjetas de torneo)
+│   ├── players/               # listado de jugadores y ficha (página y diálogo ℹ)
 │   ├── tournament/            # RoundsView, PlayersView, StandingsView, FAQ, explicaciones
 │   ├── arbitro/               # paneles de árbitro/auxiliar
 │   ├── admin/                 # panel de administración
@@ -114,6 +121,7 @@ src/
 │   ├── pairing/engine.ts      # motor (funciones puras, sin cambios)
 │   ├── auth.ts                # scrypt + JWT + sesión
 │   ├── tournament.ts          # carga/permisos de torneos
+│   ├── public-site.ts         # datos de la web pública: portada, listado y ficha
 │   └── demo-players.ts        # 104 inscritos de ejemplo (Málaga)
 ├── proxy.ts                   # escudo de rutas por rol (antes middleware)
 scripts/

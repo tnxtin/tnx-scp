@@ -117,9 +117,11 @@ export interface PublicTournamentSummary {
   arbitro: string
   playerCount: number
   roundsPlayed: number
+  /** ISO 8601 de la última actualización; null si la fecha no es válida */
+  updatedAt: string | null
 }
 
-/** Lista pública de TODOS los torneos (la frontal los agrupa por estado). */
+/** Lista pública de TODOS los torneos (la web pública los agrupa por estado o por fecha). */
 export async function listPublicTournaments(): Promise<PublicTournamentSummary[]> {
   const ts = await db.tournament.findMany({
     orderBy: [{ status: 'asc' }, { updatedAt: 'desc' }],
@@ -137,6 +139,7 @@ export async function listPublicTournaments(): Promise<PublicTournamentSummary[]
     arbitro: t.createdBy.name,
     playerCount: t._count.players,
     roundsPlayed: t._count.rounds,
+    updatedAt: Number.isNaN(t.updatedAt.getTime()) ? null : t.updatedAt.toISOString(),
   }))
 }
 

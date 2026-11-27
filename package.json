@@ -11,7 +11,14 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:reset": "prisma migrate reset",
-    "install:web": "bun scripts/install-web.ts"
+    "install:web": "bun scripts/install-web.ts",
+    "local": "bun scripts/web-local.ts",
+    "tnx": "bun cli/tnx.ts",
+    "test:cli": "bun scripts/test-cli.ts",
+    "test:web-local": "bun scripts/test-web-local.ts"
+  },
+  "bin": {
+    "tnx": "cli/tnx.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",

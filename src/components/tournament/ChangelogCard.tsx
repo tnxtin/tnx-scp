@@ -61,6 +61,17 @@ const FILTERS: Array<{ value: Filter; label: string }> = [
 
 const CHANGELOG: Version[] = [
   {
+    version: '0.5.0',
+    date: '2026-11-26',
+    title: 'Nueva portada con motivos de ajedrez',
+    entries: [
+      { kind: 'nueva', scope: 'web', text: 'Nueva portada con motivos de ajedrez: muestra los últimos torneos, el listado de jugadores, cómo funciona el sistema y la FAQ, todas las secciones con el mismo estilo.' },
+      { kind: 'nueva', scope: 'web', text: 'Listado público de jugadores (/jugadores) con buscador por nombre o club.' },
+      { kind: 'nueva', scope: 'web', text: 'La ficha de cada jugador tiene página propia (/jugadores/…): posición, puntos, evolución y detalle ronda a ronda, lista para compartir.' },
+      { kind: 'mejora', scope: 'web', text: 'La lista completa de torneos, la Wiki y el ChangeLog pasan de pestañas a páginas propias (/torneos, /wiki, /changelog) y la cabecera gana navegación.' },
+    ],
+  },
+  {
     version: '0.4.1',
     date: '2026-11-15',
     title: 'La web pública lista todos los torneos',
@@ -145,7 +156,12 @@ const CHANGELOG: Version[] = [
   },
 ]
 
-export function ChangelogCard() {
+export function ChangelogCard({
+  sinCabecera = false,
+}: {
+  /** la página /changelog ya pone el título en su cabecera */
+  sinCabecera?: boolean
+} = {}) {
   const [filter, setFilter] = useState<Filter>('todas')
 
   const versions = CHANGELOG.map((v) => ({
@@ -157,15 +173,19 @@ export function ChangelogCard() {
   return (
     <Card>
       <CardHeader className="pb-4">
-        <CardTitle className="text-base flex items-center gap-2">
-          <History className="size-4" aria-hidden />
-          ChangeLog
-        </CardTitle>
-        <CardDescription>
-          Historial de versiones de la <strong className="text-foreground">web</strong> y de
-          la <strong className="text-foreground">app de escritorio</strong>: funciones
-          nuevas, mejoras y correcciones.
-        </CardDescription>
+        {!sinCabecera && (
+          <>
+            <CardTitle className="text-base flex items-center gap-2">
+              <History className="size-4" aria-hidden />
+              ChangeLog
+            </CardTitle>
+            <CardDescription>
+              Historial de versiones de la <strong className="text-foreground">web</strong> y de
+              la <strong className="text-foreground">app de escritorio</strong>: funciones
+              nuevas, mejoras y correcciones.
+            </CardDescription>
+          </>
+        )}
         <div className="flex flex-wrap items-center gap-1.5 pt-1">
           {FILTERS.map((f) => (
             <Button

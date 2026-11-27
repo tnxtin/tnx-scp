@@ -81,8 +81,8 @@ const SECTIONS: WikiSection[] = [
     id: 'web-publica',
     title: 'La web pública (para jugadores)',
     content: [
-      'La página frontal lista **todos los torneos** en tres apartados: **en juego**, **por comenzar** y **realizados**. Al abrir un torneo verás sus emparejamientos seccionados por grupos con su franja de Elo, el ranking inicial y la clasificación en vivo.',
-      'Cada jugador tiene una **ficha** (icono ℹ en las tablas) con su posición, puntos, partidas, Elo efectivo, un gráfico de evolución de puntos y el detalle ronda a ronda: grupo, rival, color y resultado.',
+      'La **portada** muestra los últimos torneos, el **listado de jugadores** y explica cómo funciona el sistema. En **Torneos** se listan todos en tres apartados: **en juego**, **por comenzar** y **realizados**. Al abrir un torneo verás sus emparejamientos seccionados por grupos con su franja de Elo, el ranking inicial y la clasificación en vivo.',
+      'Cada jugador tiene una **ficha** con su posición, puntos, partidas, Elo efectivo, un gráfico de evolución de puntos y el detalle ronda a ronda: grupo, rival, color y resultado. Se abre desde el listado de jugadores (subenlace «Ver ficha») o con el icono ℹ de las tablas del torneo.',
       'No requiere ninguna cuenta: es solo lectura.',
     ],
   },
@@ -134,19 +134,26 @@ function RichText({ text }: { text: string }) {
   )
 }
 
-export function WikiCard() {
+export function WikiCard({
+  sinCabecera = false,
+}: {
+  /** la página /wiki ya pone el título en su cabecera */
+  sinCabecera?: boolean
+} = {}) {
   return (
     <Card>
-      <CardHeader className="pb-4">
-        <CardTitle className="text-base flex items-center gap-2">
-          <BookOpen className="size-4" aria-hidden />
-          Wiki del sistema
-        </CardTitle>
-        <CardDescription>
-          Documentación completa: sistema de emparejamiento, Elo virtual,
-          roles, web pública y app de escritorio.
-        </CardDescription>
-      </CardHeader>
+      {!sinCabecera && (
+        <CardHeader className="pb-4">
+          <CardTitle className="text-base flex items-center gap-2">
+            <BookOpen className="size-4" aria-hidden />
+            Wiki del sistema
+          </CardTitle>
+          <CardDescription>
+            Documentación completa: sistema de emparejamiento, Elo virtual,
+            roles, web pública y app de escritorio.
+          </CardDescription>
+        </CardHeader>
+      )}
       <CardContent>
         <Accordion type="multiple" defaultValue={['intro', 'bandas']}>
           {SECTIONS.map((s) => (
@@ -161,7 +168,7 @@ export function WikiCard() {
           ))}
         </Accordion>
         <p className="mt-4 text-xs text-muted-foreground">
-          ¿Dudas concretas de uso? Mira la pestaña FAQ.
+          ¿Dudas concretas de uso? Mira la sección FAQ de la portada.
         </p>
       </CardContent>
     </Card>

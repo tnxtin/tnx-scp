@@ -15,7 +15,8 @@ import {
 } from '@/components/ui/card'
 import { MessagesSquare } from 'lucide-react'
 
-const FAQS: Array<{ q: string; a: Array<string> }> = [
+/** Dudas habituales: las muestra la sección FAQ de la portada y la tarjeta de los torneos. */
+export const FAQS: Array<{ q: string; a: Array<string> }> = [
   {
     q: '¿Puedo añadir o quitar jugadores cuando el torneo ha empezado?',
     a: [
@@ -67,7 +68,7 @@ const FAQS: Array<{ q: string; a: Array<string> }> = [
   {
     q: '¿Dónde se guardan mis datos?',
     a: [
-      'Solo en el almacenamiento local (localStorage) de tu navegador: no hay servidor ni base de datos. Si borras los datos del navegador o cambias de equipo, el torneo no viaja contigo.',
+      'Los torneos se guardan en la base de datos del servidor (SQLite o MariaDB) y los gestiona el árbitro desde su panel. La web pública es solo lectura: no guarda nada en tu navegador.',
     ],
   },
 ]

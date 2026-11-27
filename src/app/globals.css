@@ -119,4 +119,32 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* los enlaces a una sección (#torneos…) bajan con suavidad */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Web pública: motivos de ajedrez                                     */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* color del cuadro oscuro y lado del cuadro del damero */
+  --board-dark: oklch(0 0 0 / 6%);
+  --board-tile: 1.5rem;
+}
+
+/*
+ * Damero (dos cuadrados por periodo). Se afina por clase arbitraria:
+ * `chess-board [--board-dark:oklch(1_0_0/5%)] [--board-tile:3rem]`
+ */
+@utility chess-board {
+  background-image: conic-gradient(
+    var(--board-dark) 90deg,
+    transparent 90deg 180deg,
+    var(--board-dark) 180deg 270deg,
+    transparent 270deg
+  );
+  background-size: calc(var(--board-tile) * 2) calc(var(--board-tile) * 2);
 }

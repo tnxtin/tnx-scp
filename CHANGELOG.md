@@ -4,6 +4,18 @@ Todos los cambios notables de **Tnx · Social Chess Pairing** — tanto de la **
 
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado es [SemVer](https://semver.org/lang/es/).
 
+## [0.5.0] — 2026-11-26 · Web
+
+### Web
+
+- **Nueva** Portada con motivos de ajedrez (damero y piezas en SVG): muestra los últimos torneos, el listado de jugadores, cómo funciona el sistema y la FAQ, todas las secciones con el mismo estilo.
+- **Nueva** Listado público de jugadores (`/jugadores`) con buscador por nombre o club y salto entre torneos.
+- **Nueva** La ficha de cada jugador tiene página propia (`/jugadores/[torneo]/[jugador]`): posición, puntos, evolución y detalle ronda a ronda, con el nombre en el título para compartir el enlace.
+- **Mejora** La lista completa de torneos, la Wiki y el ChangeLog pasan de pestañas a páginas propias (`/torneos`, `/wiki`, `/changelog`); la cabecera y el pie ganan navegación.
+- **Mejora** Las páginas públicas estrenan la misma cabecera oscura (migas, título y pieza de marca de agua).
+- **Mejora** El cálculo de la ficha se separa del diálogo ℹ, que sigue funcionando igual.
+- **Corrección** La FAQ «¿Dónde se guardan mis datos?» decía que los datos vivían en el navegador; desde la 0.2.0 viven en la base de datos del servidor.
+
 ## [0.4.1] — 2026-11-15 · Web
 
 ### Web
